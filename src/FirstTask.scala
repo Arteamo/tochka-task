@@ -7,8 +7,7 @@ object FirstTask extends App {
 object StringUtil {
   implicit class StringImprovements(s: String) {
     def sortByLength: String = {
-      s.split("")
-        .groupBy(identity)
+      s.groupBy(identity)
         .toSeq
         .map(_._2.mkString)
         .sortBy(-_.length)
